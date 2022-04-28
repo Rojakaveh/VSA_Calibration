@@ -1,4 +1,4 @@
-alter_files=function(change_params){
+alter_filesfn=function(change_params){
   filetype=NULL
   for(ft in unique(change_params$filetype)){
     print(ft)
