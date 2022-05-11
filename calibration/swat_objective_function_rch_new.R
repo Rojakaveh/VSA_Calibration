@@ -117,5 +117,5 @@ swat_objective_function_rch_new(x,calib_range,calib_params,flowgage,rch,save_res
 
 cl <- parallel::makeCluster(16)
 outDEoptimID2010<-DEoptim(swat_objective_function_rch_new,calib_params$min,calib_params$max,
-                          DEoptim.control(cluster=cl,strategy = 6,NP = 16,itermax=10,parallelType = 1,
+                          DEoptim.control(cluster=cl,strategy = 6,NP = 16,itermax=300,parallelType = 1,
                                           packages = c("SWATmodel","dplyr","EcoHydRology","base","topmodel","utils","cl"),parVar=c("alter_filesfn","%<%","NSeff","read.fortran","readSWAT")),calib_range,calib_params,flowgage,rch)
