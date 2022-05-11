@@ -38,12 +38,13 @@ alter_filesfn=function(change_params){
               fwrite_tmp[j]=sprintf(fwformat[min(j,length(fwformat))],fread_tmp[,j]*current)
             } else if(alter_type=="additive"){
               fwrite_tmp[j]=sprintf(fwformat[min(j,length(fwformat))],fread_tmp[,j]*(current+1))
-                if(fwrite_tmp[j]>100){
-                fwrite_tmp[j]=100
-                 }
-                if(fwrite_tmp[j]<30){
-                fwrite_tmp[j]=30
-                 }
+              if(as.numeric(fwrite_tmp[j])<30){
+                fwrite_tmp[j]="              30"
+              }
+              if(as.numeric(fwrite_tmp[j])>100){
+                fwrite_tmp[j]="             100"
+              }
+            }
             } else {
               fwrite_tmp[j]=sprintf(fwformat[min(j,length(fwformat))],as.numeric(current))
             } 
