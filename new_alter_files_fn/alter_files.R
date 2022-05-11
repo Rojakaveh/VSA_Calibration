@@ -44,7 +44,6 @@ alter_filesfn=function(change_params){
               if(as.numeric(fwrite_tmp[j])>100){
                 fwrite_tmp[j]="             100"
               }
-            }
             } else {
               fwrite_tmp[j]=sprintf(fwformat[min(j,length(fwformat))],as.numeric(current))
             } 
